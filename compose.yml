@@ -1,0 +1,32 @@
+version: "3.8"
+services:
+  ese-msa-security:
+    image: security:1.0
+    container_name: security
+    build: ./ese-msa-security
+    ports:
+    - "8080:8080"      
+  ese-msa-bank-bff:
+    image: bank-bff:1.0
+    container_name: bank-bff
+    build: ./ese-msa-bank-bff
+    ports:
+      - "8081:8081"
+    depends_on:
+      - ese-msa-security        
+  ese-msa-customer:
+    image: customer:1.0
+    container_name: customer
+    build: ./ese-msa-customer
+    ports:
+      - "8082:8082"
+    depends_on:
+      - ese-msa-bank-bff       
+  ese-msa-account:
+    image: account:1.0
+    container_name: account
+    build: ./ese-msa-account
+    ports:
+      - "8083:8083"  
+    depends_on:
+      - ese-msa-customer    
