@@ -35,7 +35,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"name\": \"Jose Lema\",\n        \"gender\": \"M\",\n        \"age\": 18,\n        \"identification\": \"1719956859\",\n        \"address\": \"Otavalo sn y principal\",\n        \"phone\": \"098254785\",\n        \"password\": \"1234\",\n        \"state\": true\n    }",
+							"raw": "{\n    \"name\": \"Jose Lema\",\n    \"gender\": \"M\",\n    \"age\": 18,\n    \"identification\": \"1719956859\",\n    \"address\": \"Otavalo sn y principal\",\n    \"phone\": \"098254785\",\n    \"password\": \"1234\",\n    \"state\": true\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -166,7 +166,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"idCustomer\": \"1001\",\n    \"number\": \"111111\",\n    \"type\": \"Ahorros222\",\n    \"balance\": 1000,\n    \"state\": true\n}",
+							"raw": "{\n    \"idCustomer\": \"1001\",\n    \"number\": \"111111\",\n    \"type\": \"Ahorros\",\n    \"balance\": 1000,\n    \"state\": true\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -296,7 +296,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8083/movimientos?accountId=100000&startDate=2025-04-23&endDate=2025-04-23",
+							"raw": "http://localhost:8083/movimientos?accountId=100000&startDate=2025-04-24&endDate=2025-04-24",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -312,11 +312,11 @@
 								},
 								{
 									"key": "startDate",
-									"value": "2025-04-23"
+									"value": "2025-04-24"
 								},
 								{
 									"key": "endDate",
-									"value": "2025-04-23"
+									"value": "2025-04-24"
 								}
 							]
 						}
