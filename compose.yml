@@ -6,6 +6,7 @@ services:
     build: ./ese-msa-security
     ports:
     - "8080:8080"      
+  
   ese-msa-bank-bff:
     image: bank-bff:1.0
     container_name: bank-bff
@@ -14,6 +15,7 @@ services:
       - "8081:8081"
     depends_on:
       - ese-msa-security        
+  
   ese-msa-customer:
     image: customer:1.0
     container_name: customer
@@ -22,6 +24,7 @@ services:
       - "8082:8082"
     depends_on:
       - ese-msa-bank-bff       
+  
   ese-msa-account:
     image: account:1.0
     container_name: account
@@ -30,3 +33,15 @@ services:
       - "8083:8083"  
     depends_on:
       - ese-msa-customer    
+
+  angular-app:
+    build:
+      context: ./ese-spa-bank
+      dockerfile: Dockerfile
+    ports:
+      - "4200:80"
+    volumes:
+      - ./dist:/usr/share/nginx/html
+    restart: always
+    depends_on:
+      - ese-msa-account
